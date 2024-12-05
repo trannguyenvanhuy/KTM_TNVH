@@ -1,0 +1,795 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: #007bff;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 150px; /* Kích thước logo hình tròn */
+  height: 150px;
+  border-radius: 50%; /* Làm cho logo hình tròn */
+  background-image: url("https://th.bing.com/th?id=OIP.QgEAYFELP-WBp-92LKJANgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"); /* Đặt logo hình tròn qua background-image */
+  background-size: cover;
+  background-position: center;
+  margin-right: 10px;
+}
+
+.shop-name h1 {
+  margin: 0;
+  font-size: 30px;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav span {
+  color: white;
+  font-size: 16px;
+}
+
+/* Product List styles */
+.product-list {
+  padding: 22px;
+  margin: 22px;
+  background-color: #f9f9f9;
+}
+
+.product-list h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Sử dụng CSS Grid để các sản phẩm sắp xếp thành nhiều cột */
+.products {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Tạo nhiều cột tự động */
+  gap: 20px; /* Khoảng cách giữa các sản phẩm */
+  justify-items: center; /* Canh giữa các sản phẩm */
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 250px; /* Kích thước tối đa cho mỗi thẻ sản phẩm */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Căn chỉnh các phần tử con bên trong sản phẩm */
+}
+
+/* Đảm bảo tất cả hình ảnh có cùng kích thước */
+.product-image {
+  width: 100%;
+  height: 200px; /* Cố định chiều cao */
+  object-fit: cover; /* Đảm bảo hình ảnh bao phủ đầy */
+  border-radius: 8px;
+  margin-bottom: 15px; /* Khoảng cách giữa hình ảnh và tên sản phẩm */
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #777;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.add-to-cart {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%; /* Nút chiếm hết chiều rộng */
+}
+
+.add-to-cart:hover {
+  background-color: #0056b3;
+}
+
+/* Cart styles */
+.cart {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cart ul li {
+  padding: 8px 0;
+}
+
+.cart p {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.order-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.order-button button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.order-button button:hover {
+  background-color: #0056b3;
+}
+
+/* Order Form styles */
+.order-form {
+  margin-top: 20px;
+}
+
+.order-form .form-group {
+  margin-bottom: 15px;
+}
+
+.order-form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.order-form input,
+.order-form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.order-summary {
+  margin-top: 20px;
+}
+
+.order-summary p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Contact styles */
+.contact {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact p {
+  font-size: 16px;
+}
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  background-image: url("https://th.bing.com/th/id/OIP.aAiF9dPUC-NEwZaFmdAeVgHaEK?w=317&h=180&c=7&r=0&o=5&pid=1.7"); /* Đường dẫn ảnh nền */
+  background-size: cover; /* Đảm bảo ảnh phủ kín trang */
+  background-position: center; /* Căn giữa ảnh nền */
+  background-attachment: fixed; /* Cố định ảnh nền khi cuộn */
+}
+
+/* Header styles (Ảnh bìa cho header) */
+header {
+  background-image: url("https://th.bing.com/th/id/OIP.tlT6b7YMAV4feXn3enVvHgHaEo?w=271&h=180&c=7&r=0&o=5&pid=1.7"); /* Đường dẫn ảnh bìa */
+  background-size: cover; /* Đảm bảo ảnh phủ kín header */
+  background-position: center; /* Căn giữa ảnh */
+  height: 300px; /* Chiều cao của header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Để chữ nổi bật trên ảnh bìa */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Tạo hiệu ứng bóng cho chữ */
+}
+
+header h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+/* Cart styles */
+.cart {
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.cart h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.cart ul {
+  list-style-type: none;
+}
+
+.cart li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.order-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.order-button button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.order-button button:hover {
+  background-color: #0056b3;
+}
+
+/* Order form */
+.order-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* Order Summary */
+.order-summary {
+  margin-top: 20px;
+}
+
+.order-summary p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.order-summary strong {
+  font-weight: bold;
+}
+/* Định dạng chung cho các nút */
+button {
+  background-color: #28a745; /* Màu nền xanh lá cây */
+  color: white; /* Màu chữ trắng */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px; /* Bo góc cho nút */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Thêm hiệu ứng khi hover */
+}
+
+/* Khi hover vào nút */
+button:hover {
+  background-color: #218838; /* Màu nền khi hover (tối hơn) */
+  transform: scale(1.05); /* Tăng kích thước nút một chút khi hover */
+}
+
+/* Khi nút bị disable (không thể bấm) */
+button:disabled {
+  background-color: #cccccc; /* Màu nền khi nút bị disable */
+  cursor: not-allowed; /* Thay đổi con trỏ khi hover trên nút bị disable */
+}
+
+/* Định dạng thêm cho nút "Thêm vào giỏ hàng" riêng */
+.product-card button {
+  background-color: #007bff; /* Màu nền nút xanh dương */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.product-card button:hover {
+  background-color: #0056b3; /* Màu nền khi hover (xanh dương đậm hơn) */
+  transform: scale(1.1); /* Phóng to nút khi hover */
+}
+/* Đảm bảo rằng Header nằm ở trên cùng */
+.App {
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần theo chiều dọc */
+}
+
+/* Tên shop trong Header */
+header {
+  background-color: #007bff; /* Màu nền cho Header */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Phần nội dung chính của trang */
+main {
+  padding: 20px;
+}
+
+/* Trang chủ (ProductList) */
+.product-list {
+  margin-top: 20px;
+}
+
+.product-list h2 {
+  text-align: center;
+  font-size: 28px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Thêm vào giỏ hàng */
+.product-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-card button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+/* Thêm vào phần thông báo thành công khi đăng nhập */
+.success-message {
+  background-color: #28a745;
+  color: white;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+/* Thêm vào phần thông báo lỗi khi đăng ký */
+.error {
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+/* Thêm vào phần thông báo lỗi khi đăng nhập */
+.error {
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+/* Cải thiện giao diện cho các trường nhập liệu */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Thêm phần hiển thị lỗi */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+/* Hiệu ứng Fade-in cho toàn bộ trang */
+body {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Hiệu ứng slide-in từ bên trái cho header */
+header {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Hiệu ứng slide-in cho các sản phẩm */
+.product-card {
+  animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Hiệu ứng slide-in cho giỏ hàng */
+.cart {
+  animation: slideInUp 0.7s ease-out;
+}
+/* Hiệu ứng zoom-in cho các nút */
+button:hover {
+  transform: scale(1.05); /* Phóng to khi hover */
+  transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng zoom-in cho hình ảnh sản phẩm */
+.product-image:hover {
+  transform: scale(1.1); /* Phóng to hình ảnh khi hover */
+  transition: transform 0.3s ease;
+}
+/* Giỏ hàng di chuyển khi có sản phẩm mới */
+.cart {
+  animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Hiệu ứng fade-out cho giỏ hàng khi không có sản phẩm */
+.cart.empty {
+  animation: fadeOut 1s ease-out;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* Hiệu ứng Logo khi trang tải */
+.logo {
+  animation: zoomInBounce 1s ease-out;
+}
+
+@keyframes zoomInBounce {
+  0% {
+    transform: scale(0.5); /* Bắt đầu từ kích thước nhỏ */
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1); /* Phóng to một chút */
+  }
+  100% {
+    transform: scale(1); /* Phóng to kích thước bình thường */
+    opacity: 1;
+  }
+}
+/* Hiệu ứng Hover cho Logo */
+.logo:hover {
+  transform: scale(1.1); /* Phóng to nhẹ khi hover */
+  transition: transform 0.3s ease; /* Thêm hiệu ứng mượt mà */
+}
+/* Hiệu ứng cho phần Product List khi trang tải */
+.product-list {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px); /* Bắt đầu từ dưới */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* Di chuyển lên trên */
+    opacity: 1;
+  }
+}
+
+/* Hiệu ứng cho Giỏ hàng khi trang tải */
+.cart {
+  animation: fadeInUp 0.7s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px); /* Bắt đầu từ dưới */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* Di chuyển lên trên */
+    opacity: 1;
+  }
+}
+
+/* Hiệu ứng cho các nút sản phẩm khi hover */
+.product-card button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1); /* Phóng to khi hover */
+  transition: all 0.3s ease; /* Mượt mà */
+}
+/* Hiệu ứng Logo khi trang tải */
+.logo {
+  animation: zoomInBounce 1s ease-out;
+}
+
+@keyframes zoomInBounce {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hiệu ứng Hover cho Logo */
+.logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng cho phần Product List khi trang tải */
+.product-list {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Hiệu ứng cho Giỏ hàng khi trang tải */
+.cart {
+  animation: fadeInUp 0.7s ease-out;
+}
+
+/* Hiệu ứng cho các nút sản phẩm khi hover */
+.product-card button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+/* Hiệu ứng Fade-in cho phần Liên hệ khi trang tải */
+.contact {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px); /* Bắt đầu từ dưới */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* Di chuyển lên trên */
+    opacity: 1;
+  }
+}
+/* Hiệu ứng Hover cho các trường nhập liệu */
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+  transition: all 0.3s ease;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact input[type="text"]:hover,
+.contact input[type="email"]:hover,
+.contact textarea:hover {
+  border-color: #007bff; /* Viền chuyển sang màu xanh khi hover */
+}
+/* Hiệu ứng Focus cho các trường nhập liệu */
+.contact input[type="text"]:focus,
+.contact input[type="email"]:focus,
+.contact textarea:focus {
+  border-color: #28a745; /* Viền chuyển màu xanh lá khi focus */
+  outline: none; /* Loại bỏ viền mặc định khi focus */
+}
+/* Hiệu ứng Fade-in cho phần Liên hệ khi trang tải */
+.contact {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Hiệu ứng Hover cho các trường nhập liệu */
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+  transition: all 0.3s ease;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact input[type="text"]:hover,
+.contact input[type="email"]:hover,
+.contact textarea:hover {
+  border-color: #007bff; /* Viền chuyển sang màu xanh khi hover */
+}
+
+/* Hiệu ứng Focus cho các trường nhập liệu */
+.contact input[type="text"]:focus,
+.contact input[type="email"]:focus,
+.contact textarea:focus {
+  border-color: #28a745; /* Viền chuyển màu xanh lá khi focus */
+  outline: none; /* Loại bỏ viền mặc định khi focus */
+}
+
+/* Hiệu ứng Hover cho nút gửi */
+.contact button:hover {
+  background-color: #0056b3; /* Màu nền thay đổi khi hover */
+  transform: scale(1.05); /* Phóng to nút một chút khi hover */
+  transition: all 0.3s ease;
+}
