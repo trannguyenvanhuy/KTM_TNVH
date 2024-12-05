@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/KTM_TNVH/static/css/main.adbeb283.css",
+    "main.js": "/KTM_TNVH/static/js/main.5b6133a4.js",
+    "index.html": "/KTM_TNVH/index.html",
+    "main.adbeb283.css.map": "/KTM_TNVH/static/css/main.adbeb283.css.map",
+    "main.5b6133a4.js.map": "/KTM_TNVH/static/js/main.5b6133a4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.adbeb283.css",
+    "static/js/main.5b6133a4.js"
+  ]
+}
